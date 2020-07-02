@@ -1,19 +1,38 @@
-# dmimg
+项目名称：动漫api
 
-## Project setup
-```
-npm install
-```
+功能：
+1.随机获取手机动漫超清图片
+2.随机获取动漫头像
+3.另类设计
+屏幕左侧 返回
+屏幕右侧 刷新
+屏幕下方 下载 （下载功能暂未开发）
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+项目心得：
+主要是想使用一下vue 来开发项目 遇到问题记录
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+主要使用了vue的 router 父子组件传值（主要是子传父）小项目 也没有使用到bus 中央事件总线 
+
+对于axios 的jsonp 本来也是做了的 但是 api 接口 Origin：* 所以也没有用到 
+备注：个人觉得jsonp 使用起来并不是很好用 而且还需要封装 网上大佬也有封装好的 拿来就可以用 查阅资料 通用性比较强 对浏览器也是支持
+我个人来说还是喜欢用webpack vue.config.js 的proxy 代理 简单直接 vue cli 也有文档说明  
+
+这里记录一下组件传值  
+
+父传子 属性向下传  父组件引用子组件时 在子组件上定义一个属性  子组件在使用 props:[]接收就ok了
+
+子传父 事件向下传 父组件引用子组件时 在子组件上定义一个事件 子组件使用$emit传值
+
+复杂传值 中央事件总线$on $emit 或则使用vuex 的store state
+
+
+项目还没有做完 很多地方也没有完善 
+
+想把点击头像 显示个人页面 做成路由 使用路由守卫  想想 嫌麻烦 于是就是做了个localstorage判断username password 后面修改
+
+总体来说 项目把vue的小中部分的内容都使用到了  一些比较深的内容 没有涉及 后续慢慢完善的时候 肯定会遇到
+
+
+                            sevensun 加油！
